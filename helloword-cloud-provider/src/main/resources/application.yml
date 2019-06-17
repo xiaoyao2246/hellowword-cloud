@@ -1,0 +1,36 @@
+server:
+  port: 8001
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件所在路径
+  type-aliases-package:  com.xiaojian.cloud.bean  #所有实体类所在的包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml   #mapper映射文件位置
+
+
+spring:
+  application:
+    name: helloword-cloud-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #数据源
+    driver-class-name:  org.gjt.mm.mysql.Driver #mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloudDB01?useUnicode=true&characterEncoding=UTF-8&useInformationSchema=true #数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5 #数据库连接池最小维持连接数
+      initial-size: 5 #初始化连接数
+      max-total: 5 #最大连接数
+      max-wait-millis: 200
+eureka:
+  client:
+    service-url: #客户端注册到eureka服务列表
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: helloword-cloud-provider(8001) #自定义服务名称
+    prefer-ip-address: true #访问路径显示IP地址
+
+info:
+  app.name: xiaojian-helloword-cloud
+  company.name: www.baidu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
