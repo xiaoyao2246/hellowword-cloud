@@ -12,6 +12,7 @@ public class MyRule {
     @Bean
     public IRule initRule() {
         //return new RoundRobinRule();//轮询
-        return new RandomRule();
+        //return new RandomRule();
+        return new MyLoadBalanceRule();
     }
 }

@@ -41,11 +41,11 @@ public class DeptController {
         System.out.println("ListService:" + serviceList);
 
         List<ServiceInstance> serList = discoveryClient.getInstances("helloword-cloud-provider");
-        for (ServiceInstance element : serList) {
-            System.out.println(element.getHost());
-            System.out.println(element.getPort());
-            System.out.println(element.getServiceId());
-            System.out.println(element.getUri());
+        for (ServiceInstance element1 : serList) {
+            System.out.println(element1.getHost());
+            System.out.println(element1.getPort());
+            System.out.println(element1.getServiceId());
+            System.out.println(element1.getUri());
         }
         return this.discoveryClient;
     }
