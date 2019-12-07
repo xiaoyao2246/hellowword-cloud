@@ -13,6 +13,7 @@
         <module>helloword-cloud-consumer</module>
         <module>helloword-cloud-eureka-7001</module>
         <module>helloword-cloud-provider8002</module>
+        <module>helloword-cloud-consumer-feign</module>
     </modules>
 
     <packaging>pom</packaging>
